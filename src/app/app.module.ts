@@ -9,13 +9,15 @@ import { CountriesComponent } from './components/countries/countries.component';
 import {HttpClientModule}  from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component'
 import { GoogleChartsModule } from 'angular-google-charts';
+import { IndiaComponent } from './components/india/india.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
     HomeComponent,
     CountriesComponent,
-    DashboardCardComponent
+    DashboardCardComponent,
+    IndiaComponent
   ],
   imports: [
     BrowserModule,

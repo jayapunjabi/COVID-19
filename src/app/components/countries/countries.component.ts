@@ -13,6 +13,9 @@ import { map } from 'rxjs/operators';
 export class CountriesComponent implements OnInit {
 
   data : GlobalDataSummary[];
+  dataTable = [];
+  myType = "";
+  myOptions = {};
   countries : string[] = [];
   totalConfirmed = 0;
   totalActive = 0;
@@ -32,6 +35,7 @@ export class CountriesComponent implements OnInit {
   constructor(private service : DataServiceService) { }
 
   ngOnInit(): void {
+    this.myType = "GeoChart";
 
     merge(
       this.service.getDateWiseData().pipe(
@@ -48,7 +52,7 @@ export class CountriesComponent implements OnInit {
     ).subscribe(
       {
         complete : ()=>{
-         this.updateValues('India')
+         this.updateValues('US')
          this.loading = false;
         }
       }
@@ -59,17 +63,18 @@ export class CountriesComponent implements OnInit {
   }
 
   updateChart(){
-    let dataTable = [];
-    dataTable.push(["Date" , 'Cases'])
-    this.selectedCountryData.forEach(cs=>{
-      dataTable.push([cs.date , cs.cases])
+    this.dataTable.push(['Country' , 'Cases'])
+    this.data.forEach(cs=>{
+      this.dataTable.push([cs.country , cs.active])
     })
-
-   
+    this.myOptions = {
+      colors: ['#e0440e', '#e6693e', '#ec8f6e', '#f3b49f', '#f6c7b6'],
+      is3D: true
+    };
+    console.log(this.dataTable);
   }
 
   updateValues(country : string){
-    console.log(country);
     this.data.forEach(cs=>{
       if(cs.country == country){
         this.totalActive = cs.active

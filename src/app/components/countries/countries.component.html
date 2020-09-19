@@ -3,7 +3,8 @@
 </div>
 
 <div class="jumbotron bg-white text-center p-0 m-0 ">
-    <h1 class="display-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Corona Covid-19 Tracker Country Wise</h1>
+    <h1 class="display-4" style="font-family: Georgia, 'Times New Roman', Times, serif;">Corona Covid-19 Tracker Country
+        Wise</h1>
     <hr>
 
     <div class="mx-auto">
@@ -14,7 +15,8 @@
             </select>
         </div>
     </div>
-    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecovered]='totalRecovered' [totalDeaths]='totalDeaths'></app-dashboard-card>
+    <app-dashboard-card [totalConfirmed]='totalConfirmed' [totalActive]='totalActive' [totalRecovered]='totalRecovered'
+        [totalDeaths]='totalDeaths'></app-dashboard-card>
 
 
     <div class="row">
@@ -40,7 +42,8 @@
             </table>
         </div>
         <div class="col">
-            <google-chart></google-chart>
+            <google-chart [type]="myType" [data]="dataTable" [options] = "myOptions">
+            </google-chart>
         </div>
 
 
