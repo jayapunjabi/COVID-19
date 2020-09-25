@@ -1,3 +1,54 @@
-<div>
-    <p></p>
+<div class="row">
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                <h3>Confirmed</h3>
+            </div>
+            <div class="value">
+                {{total.confirmed}}
+            </div>
+        </div>
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                <h3>Recovered</h3>
+            </div>
+            <div class="value">
+                {{total.recovered}}
+            </div>
+        </div>
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                <h3>Deaths</h3>
+            </div>
+            <div class="value">
+               {{total.deaths}}
+            </div>
+        </div>
+    </div>
+    <div class="card col p-3 m-3">
+        <div class="ui statistic">
+            <div class="label">
+                <h3>Active</h3>
+            </div>
+            <div class="value">
+                {{total.active}}
+            </div>
+        </div>
+    </div>
+
 </div>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Cases</th>
+    </tr>
+    <tr *ngFor="let state of indiaStateStat">
+        <td>{{state.state}}</td>
+        <td>{{state.confirmed}}</td>
+
+    </tr>
+</table>

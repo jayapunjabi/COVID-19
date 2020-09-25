@@ -1,4 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -10,6 +11,7 @@ import {HttpClientModule}  from '@angular/common/http';
 import { DashboardCardComponent } from './components/dashboard-card/dashboard-card.component'
 import { GoogleChartsModule } from 'angular-google-charts';
 import { IndiaComponent } from './components/india/india.component';
+import { AccordionModule } from 'ngx-bootstrap/accordion';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +25,9 @@ import { IndiaComponent } from './components/india/india.component';
     BrowserModule,
     AppRoutingModule, 
     HttpClientModule, 
-    GoogleChartsModule
+    GoogleChartsModule,
+    AccordionModule.forRoot(),
+    BrowserAnimationsModule
     
   ],
   providers: [],

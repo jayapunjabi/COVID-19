@@ -8,16 +8,33 @@ import { DataServiceService} from 'src/app/services/data-service.service'
 })
 export class IndiaComponent implements OnInit {
   loading = true;
-  indiaStat : any;
+  indiaStateStat : any;
+  isDistrictVisible = false;
+  stateDistrictStat : any;
+  districtStat: any;
+  districtName: string[] = [];
+  oneAtATime: boolean = true;
+  state : string = '';
+  total : any = {};
+
 
   constructor(private service : DataServiceService) { }
 
   ngOnInit(): void {
+    this.oneAtATime = true;
     this.service.getIndiaData().subscribe((res) => {
-      this.indiaStat = res;
-      console.log(res);
+      this.indiaStateStat = res;
+      console.log(this.indiaStateStat.statewise);
+      this.indiaStateStat = this.indiaStateStat.statewise;
+      this.total = this.indiaStateStat[0];
+      console.log(this.total);
+
       this.loading = false;
     });
+    this.service.getIndiaDistrictData().subscribe((res) => {
+      this.stateDistrictStat = res;
+    })
+
   }
 
 }
