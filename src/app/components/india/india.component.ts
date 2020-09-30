@@ -26,9 +26,8 @@ export class IndiaComponent implements OnInit {
       this.indiaStateStat = res;
       console.log(this.indiaStateStat.statewise);
       this.indiaStateStat = this.indiaStateStat.statewise;
-      this.total = this.indiaStateStat[0];
-      console.log(this.total);
-
+      this.total = this.indiaStateStat.shift();
+      this.indiaStateStat.push(this.total);
       this.loading = false;
     });
     this.service.getIndiaDistrictData().subscribe((res) => {

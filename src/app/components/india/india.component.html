@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="card col p-3 m-3">
+    <div class="card col p-3 m-3" style="border-bottom: 8px solid #f14444;">
         <div class="ui statistic">
             <div class="label">
                 <h3>Confirmed</h3>
@@ -9,17 +9,19 @@
             </div>
         </div>
     </div>
-    <div class="card col p-3 m-3">
+    <div class="card col p-3 m-3" style="border-bottom: 8px solid #4da736;">
         <div class="ui statistic">
             <div class="label">
                 <h3>Recovered</h3>
             </div>
             <div class="value">
                 {{total.recovered}}
+               
             </div>
+          
         </div>
     </div>
-    <div class="card col p-3 m-3">
+    <div class="card col p-3 m-3" style="border-bottom: 8px solid #636161;">
         <div class="ui statistic">
             <div class="label">
                 <h3>Deaths</h3>
@@ -29,7 +31,7 @@
             </div>
         </div>
     </div>
-    <div class="card col p-3 m-3">
+    <div class="card col p-3 m-3" style="border-bottom: 8px solid #f14444;">
         <div class="ui statistic">
             <div class="label">
                 <h3>Active</h3>
@@ -41,15 +43,22 @@
     </div>
 
 </div>
-<table>
+<h2>State Wise Data</h2>
+<table class="table table-striped  table-bordered">
     <tr>
-        <th>Name</th>
-        <th>Cases</th>
+        <th scope="col">Name</th>
+        <th scope="col"> Confirmed Cases</th>
+        <th scope="col">Deaths</th>
+        <th scope="col">Recovered</th>
+        <th scope="col">Active</th>
     </tr>
     <tr *ngFor="let state of indiaStateStat">
-        <td>{{state.state}}</td>
-        <td>{{state.confirmed}}</td>
-        <td>Hello</td>
+        <td scope="row">{{state.state}}</td>
+        <td scope="row">{{state.confirmed}}</td>
+        <td scope="row">{{state.deaths}}</td>
+        <td scope="row">{{state.recovered}}</td>
+        <td scope="row">{{state.active}}</td>
+     
 
     </tr>
 </table>

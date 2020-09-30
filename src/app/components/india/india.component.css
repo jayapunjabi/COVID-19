@@ -1,0 +1,70 @@
+
+*{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+   
+}
+table{
+    border: #666262 solid 1px;
+    text-align: center;
+
+}
+th{
+    font-weight: bold;
+    color: #fafafa;
+    background-color: black;
+    text-align: center;
+}
+
+h2{
+    font-weight: bold;
+
+}
+
+tr:nth-child(even) {
+    background: #b4b1b1 !important;
+    color: rgb(0, 0, 0) !important;
+}
+tr:nth-child(odd) {
+    background: #fafafa !important;
+    color: rgb(0, 0, 0) !important;
+}
+
+@media screen and (max-width: 500px) {
+    div.table {
+        font-size: 14px;
+        text-align: left;
+    }
+    div.card {
+        width: 100%;
+        font-size: 14px;
+       
+    }
+}
+@media screen and (min-width: 600px) {
+    div.card {
+        width: 100%;
+        font-size: 14px;
+       
+    }
+    div.table {
+        font-size: 22px;
+        text-align: left;
+       
+    }
+
+}
+
+@media screen and (min-width: 300px) {
+    div.table {
+        font-size: 18px;
+        text-align: left;
+       
+}
+div.card {
+    width: 100%;
+    font-size: 14px;
+   
+}
+
+}
